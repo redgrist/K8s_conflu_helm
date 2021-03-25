@@ -13,4 +13,4 @@ spec:
           service:
             name: confluence-1616700975
             port:
-              number: 8090
+              number: 80
