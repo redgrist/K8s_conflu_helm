@@ -240,7 +240,7 @@ spec:
             configMapKeyRef:
               key: reserved_code_cache
               name: conflu-confluence-jvm-config
-        image: atlassian/confluence-server:7.9.0-jdk11
+        image: atlassian/confluence-server:latest
         imagePullPolicy: IfNotPresent
         name: confluence
         ports:
