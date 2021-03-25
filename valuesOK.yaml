@@ -181,17 +181,17 @@ synchrony:
 
 ingress:
   # -- True if an Ingress should be created.
-  create: false
+  create: true
   # -- True if the created Ingress is to use the Kubernetes ingress-nginx controller.
   # This will populate the Ingress with annotations for that controller.
   # Set to false if a different controller is to be used, in which case the annotations need to be specified.
-  nginx: true
+  nginx: false
   # -- The fully-qualified hostname of the Ingress.
-  host:
+  host: conflu.kubernetes.local
   # -- The custom annotations that should be applied to the Ingress.
   annotations: {}
   # -- True if the browser communicates with the application over HTTPS.
-  https: true
+  https: false
   # -- Secret that contains a TLS private key and certificate.
   # Optional if Ingress Controller is configured to use one secret for all ingresses
   tlsSecretName:
