@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: sonarqube-ingress
+  name: conflu-ingress
 spec:
   rules:
   - host: conflu.kubernetes.local
@@ -11,6 +11,6 @@ spec:
         path: /
         backend:
           service:
-            name: sonarqube
+            name: conflu
             port:
               number: 8090
