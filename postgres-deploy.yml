@@ -1,0 +1,68 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: conflu-db-postgres  
+  labels:                 
+    app: conflu-db-postgres
+  # namespace: conflu
+spec:
+  ports:
+  - name: port-db
+    port: 5432
+    protocol: TCP
+    targetPort: 5432
+  selector:
+    app: conflu-db-postgres
+
+---
+
+apiVersion:  apps/v1 
+kind: Deployment
+metadata:
+  name: conflu-db-postgres
+  labels:
+    app: conflu-db-postgres
+  # namespace: conflu
+spec:
+  selector:
+    matchLabels:
+      app: conflu-db-postgres
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: conflu-db-postgres
+    spec:
+      containers:
+      - image: postgres:11
+        resources:
+           requests:
+             memory: "2G"
+             cpu: 2
+           limits:
+             memory: "4G"
+             cpu: 4
+        name: postgres
+        env:
+          #  - name: POSTGRES_DB
+          #    value: "conflu"
+           - name: POSTGRES_PASSWORD
+             value: "conflu"
+           - name: POSTGRES_USER
+             value: "conflu"
+           - name: PGDATA
+             value: /var/lib/postgresql/data/conflu
+          #  - name: POSTGRES_HOST_AUTH_METHOD
+          #    value: "password" 
+        ports:
+        - containerPort: 5432
+          name: postgres-conflu
+        volumeMounts:
+        - name: postgres-conflu-data 
+          mountPath: "/var/lib/postgresql/data"
+      volumes:
+      - name: postgres-conflu-data   
+        persistentVolumeClaim:
+          claimName: postgres-conflu-data
