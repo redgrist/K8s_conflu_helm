@@ -1,0 +1,48 @@
+apiVersion: v1
+data:
+  additional_jvm_args: -Dconfluence.cluster.hazelcast.listenPort=5701 -Dsynchrony.btf.disabled=true
+    -Dconfluence.clusterNodeName.useHostname=true -Datlassian.logging.cloud.enabled=false
+  max_heap: 2g
+  min_heap: 2g
+  reserved_code_cache: 512m
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: conflu
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2021-03-25T21:07:12Z"
+  labels:
+    app.kubernetes.io/instance: conflu
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: confluence
+    app.kubernetes.io/version: 7.9.0-jdk11
+    helm.sh/chart: confluence-0.5.0
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:additional_jvm_args: {}
+        f:max_heap: {}
+        f:min_heap: {}
+        f:reserved_code_cache: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/instance: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/version: {}
+          f:helm.sh/chart: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2021-03-25T21:07:12Z"
+  name: conflu-confluence-jvm-config
+  namespace: default
+  resourceVersion: "5497020"
+  uid: 67e5a4e4-6bf0-419d-abef-b9d7089420e7
