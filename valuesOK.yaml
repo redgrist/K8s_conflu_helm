@@ -7,7 +7,7 @@ image:
   repository: atlassian/confluence-server
   pullPolicy: IfNotPresent
   # -- The docker image tag to be used. Defaults to the Chart appVersion.
-  tag:
+  tag: latest
 
 serviceAccount:
   # -- Specifies the name of the ServiceAccount to be used by the pods.
