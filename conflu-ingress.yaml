@@ -11,6 +11,6 @@ spec:
         path: /
         backend:
           service:
-            name: confluence-1616700180
+            name: confluence-1616700975
             port:
               number: 8090
