@@ -1,0 +1,345 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    meta.helm.sh/release-name: conflu
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2021-03-31T06:52:01Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/instance: conflu
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: confluence
+    app.kubernetes.io/version: 7.9.0-jdk11
+    helm.sh/chart: confluence-0.5.0
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/instance: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/version: {}
+          f:helm.sh/chart: {}
+      f:spec:
+        f:podManagementPolicy: {}
+        f:replicas: {}
+        f:revisionHistoryLimit: {}
+        f:selector: {}
+        f:serviceName: {}
+        f:template:
+          f:metadata:
+            f:labels:
+              .: {}
+              f:app.kubernetes.io/instance: {}
+              f:app.kubernetes.io/name: {}
+          f:spec:
+            f:containers:
+              k:{"name":"confluence"}:
+                .: {}
+                f:env:
+                  .: {}
+                  k:{"name":"ATL_CLUSTER_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"ATL_CLUSTER_TYPE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"ATL_DB_TYPE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"ATL_PRODUCT_HOME_SHARED"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"ATL_TOMCAT_ACCESS_LOG"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"HAZELCAST_KUBERNETES_SERVICE_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"JVM_MAXIMUM_MEMORY"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:configMapKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                  k:{"name":"JVM_MINIMUM_MEMORY"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:configMapKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                  k:{"name":"JVM_RESERVED_CODE_CACHE_SIZE"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:configMapKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                  k:{"name":"JVM_SUPPORT_RECOMMENDED_ARGS"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:configMapKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                  k:{"name":"KUBERNETES_NAMESPACE"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:fieldRef:
+                        .: {}
+                        f:apiVersion: {}
+                        f:fieldPath: {}
+                  k:{"name":"SET_PERMISSIONS"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"UMASK"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":5701,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                  k:{"containerPort":8090,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                f:readinessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:resources: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:volumeMounts:
+                  .: {}
+                  k:{"mountPath":"/opt/atlassian/confluence/logs"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+                  k:{"mountPath":"/var/atlassian/application-data/confluence"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                  k:{"mountPath":"/var/atlassian/application-data/shared-home"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext:
+              .: {}
+              f:fsGroup: {}
+            f:serviceAccount: {}
+            f:serviceAccountName: {}
+            f:terminationGracePeriodSeconds: {}
+            f:volumes:
+              .: {}
+              k:{"name":"shared-home"}:
+                .: {}
+                f:name: {}
+                f:persistentVolumeClaim:
+                  .: {}
+                  f:claimName: {}
+        f:updateStrategy:
+          f:rollingUpdate:
+            .: {}
+            f:partition: {}
+          f:type: {}
+        f:volumeClaimTemplates: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2021-03-31T06:52:01Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:collisionCount: {}
+        f:currentReplicas: {}
+        f:currentRevision: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updateRevision: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-03-31T06:54:04Z"
+  name: conflu-confluence
+  namespace: default
+  resourceVersion: "5652244"
+  uid: 10a97daa-bba2-4333-8132-6d912646fbab
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: conflu
+      app.kubernetes.io/name: confluence
+  serviceName: conflu-confluence
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: conflu
+        app.kubernetes.io/name: confluence
+    spec:
+      containers:
+      - env:
+        - name: ATL_TOMCAT_ACCESS_LOG
+          value: "true"
+        - name: UMASK
+          value: "0022"
+        - name: SET_PERMISSIONS
+          value: "false"
+        - name: ATL_PRODUCT_HOME_SHARED
+          value: /var/atlassian/application-data/shared-home
+        - name: JVM_SUPPORT_RECOMMENDED_ARGS
+          valueFrom:
+            configMapKeyRef:
+              key: additional_jvm_args
+              name: conflu-confluence-jvm-config
+        - name: KUBERNETES_NAMESPACE
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+        - name: HAZELCAST_KUBERNETES_SERVICE_NAME
+          value: conflu-confluence
+        - name: ATL_CLUSTER_TYPE
+          value: kubernetes
+        - name: ATL_CLUSTER_NAME
+          value: conflu-confluence
+        - name: ATL_DB_TYPE
+          value: postgresql
+        - name: JVM_MINIMUM_MEMORY
+          valueFrom:
+            configMapKeyRef:
+              key: min_heap
+              name: conflu-confluence-jvm-config
+        - name: JVM_MAXIMUM_MEMORY
+          valueFrom:
+            configMapKeyRef:
+              key: max_heap
+              name: conflu-confluence-jvm-config
+        - name: JVM_RESERVED_CODE_CACHE_SIZE
+          valueFrom:
+            configMapKeyRef:
+              key: reserved_code_cache
+              name: conflu-confluence-jvm-config
+        image: atlassian/confluence-server:7.4.8
+        imagePullPolicy: IfNotPresent
+        name: confluence
+        ports:
+        - containerPort: 8090
+          name: http
+          protocol: TCP
+        - containerPort: 5701
+          name: hazelcast
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 30
+          httpGet:
+            path: /status
+            port: 8090
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/atlassian/application-data/confluence
+          name: local-home
+        - mountPath: /opt/atlassian/confluence/logs
+          name: local-home
+          subPath: logs
+        - mountPath: /var/atlassian/application-data/shared-home
+          name: shared-home
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 2002
+      serviceAccount: admin
+      serviceAccountName: admin
+      terminationGracePeriodSeconds: 1
+      volumes:
+      - name: shared-home
+        persistentVolumeClaim:
+          claimName: conflu-confluence-shared-home
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate
+  volumeClaimTemplates:
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      creationTimestamp: null
+      name: local-home
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+      volumeMode: Filesystem
+    status:
+      phase: Pending
+status:
+  collisionCount: 0
+  currentReplicas: 1
+  currentRevision: conflu-confluence-7477d88c89
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updateRevision: conflu-confluence-7477d88c89
+  updatedReplicas: 1
